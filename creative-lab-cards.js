@@ -123,3 +123,5 @@ let sixthAnimation = gsap.set(".sixth-card", {transformOrigin: "right center", f
 /* SIXTH CARDS SCROLL ANIMATION END */
 
 }
+
+// test
