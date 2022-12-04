@@ -40,7 +40,6 @@ $(".project-link").slideDown()
 
 /* SECOND CARDS SCROLL ANIMATION START */
 
-const mediaQuery = window.matchMedia('(max-width: 991px)');
 const scrollSection = $('.second-cards-section');
 const scrollItems = $('.second-cards-item');
 function scrollSectionHeight() {
