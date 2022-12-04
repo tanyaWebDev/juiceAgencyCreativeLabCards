@@ -3,9 +3,10 @@ function init() {
 
 /* FIRST CARDS MOBILE START */
 
-const mediaQuery = window.matchMedia('(max-width: 991px)');
+const mediaQueryTablet = window.matchMedia('(max-width: 991px)');
+const mediaQueryHorizontalMobile = window.matchMedia('(max-width: 767px)');
 $(".first-accordion_item").removeClass("active")
-if (mediaQuery.matches) {
+if (mediaQueryTablet.matches) {
 $(".first-cards-accordion_content-wrap").slideUp()
 $(".project-link").slideUp()
 }
@@ -43,7 +44,7 @@ $(".project-link").slideDown()
 const scrollSection = $('.second-cards-section');
 const scrollItems = $('.second-cards-item');
 function scrollSectionHeight() {
-    if (mediaQuery.matches) {
+    if (mediaQueryHorizontalMobile.matches) {
     scrollSection.css('height', 'auto');
     } else {
     scrollSection.css('height', (100 * scrollItems.length + 'vh'));
