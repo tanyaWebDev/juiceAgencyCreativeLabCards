@@ -12,7 +12,7 @@ $(".project-link").slideUp()
 }
 
 $(".first-accordion_item").click(function() {
-if (mediaQuery.matches) {
+if (mediaQueryTablet.matches) {
 $(this).toggleClass("active")
 $(this).find(".project-link").slideDown()
 $(this).find(".first-cards-accordion_content-wrap").stop().slideToggle(600)
@@ -23,7 +23,7 @@ $(this).siblings(".first-accordion_item").removeClass("active")
 })
 
 $(window).resize(function(){
-if (mediaQuery.matches) {
+if (mediaQueryTablet.matches) {
 if ($('.first-accordion_item.active').length > 0) {
 } else {
     $(".first-cards-accordion_content-wrap").slideUp()
