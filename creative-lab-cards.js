@@ -26,8 +26,8 @@ $(window).resize(function(){
 if (mediaQueryTablet.matches) {
 if ($('.first-accordion_item.active').length > 0) {
 } else {
-    $(".first-cards-accordion_content-wrap").slideUp()
-    $(".project-link").slideUp()
+$(".first-cards-accordion_content-wrap").slideUp()
+$(".project-link").slideUp()
 }
 } else {
 $(".first-accordion_item").removeClass("active")
@@ -44,16 +44,16 @@ $(".project-link").slideDown()
 const scrollSection = $('.second-cards-section');
 const scrollItems = $('.second-cards-item');
 function scrollSectionHeight() {
-    if (mediaQueryHorizontalMobile.matches) {
-    scrollSection.css('height', 'auto');
-    } else {
-    scrollSection.css('height', (100 * scrollItems.length + 'vh'));
-    }
+if (mediaQueryHorizontalMobile.matches) {
+scrollSection.css('height', 'auto');
+} else {
+scrollSection.css('height', (100 * scrollItems.length + 'vh'));
+}
 }
 scrollSectionHeight()
 
 $(window).resize(function(){
-    scrollSectionHeight()
+scrollSectionHeight()
 })
 
 let scrollElemWrapper = $('.second-cards-wrapper'),
@@ -64,13 +64,13 @@ mm.add("(min-width: 768px)", () => {
 let specializedServicesScroll = gsap.to(scrollElemWrapper, { 
 x: () => -((scrollItems.length - 1) * scrollItems.outerWidth(true) + $('.second-cards-item:last').outerWidth(true) - $('.second-cards-container').width()),   
 scrollTrigger: {
-    trigger: scrollSection,
-    start: "top top",
-    end: "bottom bottom",
-    ease:'none',
-    duration: 1000,
-    invalidateOnRefresh: true,
-    scrub: true
+trigger: scrollSection,
+start: "top top",
+end: "bottom bottom",
+ease:'none',
+duration: 1000,
+invalidateOnRefresh: true,
+scrub: true
 }
 }); 
 });
@@ -90,26 +90,26 @@ mm.add("(min-width: 768px)", () => {
 let scrollParallaxEvenCards = gsap.to(fifthCardsEven, { 
 y: "3rem",
 scrollTrigger: {
-    trigger: fifthCardsScrollTrigger,
-    start: "top bottom",
-    end: "bottom top",
-    ease:'none',
-    duration: 1000,
-    invalidateOnRefresh: true,
-    scrub: true
+trigger: fifthCardsScrollTrigger,
+start: "top bottom",
+end: "bottom top",
+ease:'none',
+duration: 1000,
+invalidateOnRefresh: true,
+scrub: true
 }
 });
 
 let scrollParallaxOddCards = gsap.to(fifthCardsOdd, { 
 y: "-1rem",
 scrollTrigger: {
-    trigger: fifthCardsScrollTrigger,
-    start: "top bottom",
-    end: "bottom top",
-    ease:'none',
-    duration: 1000,
-    invalidateOnRefresh: true,
-    scrub: true
+trigger: fifthCardsScrollTrigger,
+start: "top bottom",
+end: "bottom top",
+ease:'none',
+duration: 1000,
+invalidateOnRefresh: true,
+scrub: true
 }
 });
 
@@ -127,8 +127,8 @@ let sixthCardsTrigger = ScrollTrigger.create({
 onUpdate: (self) => {
 let skew = clamp(self.getVelocity() / -300);
 if (Math.abs(skew) > Math.abs(proxy.skew)) {
-    proxy.skew = skew;
-    gsap.to(proxy, {skew: 0, duration: 0.8, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
+proxy.skew = skew;
+gsap.to(proxy, {skew: 0, duration: 0.8, ease: "power3", overwrite: true, onUpdate: () => skewSetter(proxy.skew)});
 }
 }
 });
@@ -136,5 +136,21 @@ if (Math.abs(skew) > Math.abs(proxy.skew)) {
 let sixthAnimation = gsap.set(".sixth-card", {transformOrigin: "right center", force3D: true});
 
 /* SIXTH CARDS SCROLL ANIMATION END */
+
+/* SEVENTH CARDS SCROLL ANIMATION START */
+
+gsap.defaults({ease: "power3"});
+gsap.set(".box", {y: 100});
+
+
+ScrollTrigger.batch(".seventh-cards--item", {
+    start: "top bottom-=100px",
+    onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, backgroundSize:"100%", stagger: 0.15}),
+    onLeaveBack:batch => gsap.to(batch, {opacity: 0, y: 100, backgroundSize:"0%", stagger: 0.1})
+});
+
+ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".seventh-cards--item", {y: 0, backgroundSize:"0%"}));
+
+/* SEVENTH CARDS SCROLL ANIMATION END */
 
 }
