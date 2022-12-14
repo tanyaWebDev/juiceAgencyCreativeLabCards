@@ -139,6 +139,8 @@ let sixthAnimation = gsap.set(".sixth-card", {transformOrigin: "right center", f
 
 /* SEVENTH CARDS SCROLL ANIMATION START */
 
+mm.add("(min-width: 768px)", () => {
+
 gsap.defaults({ease: "power3"});
 gsap.set(".seventh-cards--item", {y: 100});
 
@@ -151,6 +153,7 @@ ScrollTrigger.batch(".seventh-cards--item", {
 
 ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".seventh-cards--item", {y: 0, backgroundSize:"0%"}));
 
+});
 /* SEVENTH CARDS SCROLL ANIMATION END */
 
 }
