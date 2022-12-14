@@ -174,4 +174,16 @@ ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".seventh-cards--it
 });
 /* SEVENTH CARDS SCROLL ANIMATION END */
 
+/* EIGHTH CARDS SCROLL ANIMATION START */
+document.getElementById("eighth-cards__list").onmousemove = e => {
+    for(const card of document.getElementsByClassName("eighth-cards__item")) {
+      const rect = card.getBoundingClientRect(),
+            x = e.clientX - rect.left,
+            y = e.clientY - rect.top;
+  
+      card.style.setProperty("--mouse-x", `${x}px`);
+      card.style.setProperty("--mouse-y", `${y}px`);
+    };
+  }
+  /* EIGHTH CARDS SCROLL ANIMATION END */
 }
