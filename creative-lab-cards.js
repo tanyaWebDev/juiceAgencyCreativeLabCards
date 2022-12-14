@@ -140,7 +140,7 @@ let sixthAnimation = gsap.set(".sixth-card", {transformOrigin: "right center", f
 /* SEVENTH CARDS SCROLL ANIMATION START */
 
 gsap.defaults({ease: "power3"});
-gsap.set(".box", {y: 100});
+gsap.set(".seventh-cards--item", {y: 100});
 
 
 ScrollTrigger.batch(".seventh-cards--item", {
