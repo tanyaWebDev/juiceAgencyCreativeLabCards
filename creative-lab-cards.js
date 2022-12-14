@@ -141,17 +141,35 @@ let sixthAnimation = gsap.set(".sixth-card", {transformOrigin: "right center", f
 
 mm.add("(min-width: 768px)", () => {
 
-gsap.defaults({ease: "power3"});
-gsap.set(".seventh-cards--item", {y: 100});
+gsap.defaults({
+    ease: "power3"
+});
+
+gsap.set(".seventh-cards--item", {
+    y: 100
+});
 
 
 ScrollTrigger.batch(".seventh-cards--item", {
     start: "top bottom-=100px",
-    onEnter: batch => gsap.to(batch, {opacity: 1, y: 0, backgroundSize:"100%", stagger: 0.15}),
-    onLeaveBack:batch => gsap.to(batch, {opacity: 0, y: 100, backgroundSize:"0%", stagger: 0.1})
+    onEnter: batch => gsap.to(batch, {
+        opacity: 1, 
+        y: 0, 
+        backgroundSize:"100%", 
+        stagger: 0.15
+    }),
+    onLeaveBack:batch => gsap.to(batch, {
+        opacity: 0, 
+        y: 100, 
+        backgroundSize:"0%", 
+        stagger: 0.1
+    })
 });
 
-ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".seventh-cards--item", {y: 0, backgroundSize:"0%"}));
+ScrollTrigger.addEventListener("refreshInit", () => gsap.set(".seventh-cards--item", {
+    y: 0, 
+    backgroundSize:"0%"
+}));
 
 });
 /* SEVENTH CARDS SCROLL ANIMATION END */
