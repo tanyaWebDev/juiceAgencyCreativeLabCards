@@ -429,8 +429,8 @@ function changeIndex(item, to, sameRow, sameCol) {
 
 function Sortable(element, index) {
     
-  let content = element.querySelector(".item-content");
-  let order   = element.querySelector(".order");
+  let content = element.querySelector(".twelveth-card__item-content");
+  let order   = element.querySelector(".twelveth-card__item-number");
   
   let animation = gsap.to(content, {
     duration: 0.3,
