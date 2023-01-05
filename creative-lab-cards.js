@@ -372,6 +372,8 @@ document.getElementById("eighth-cards__list").onmousemove = e => {
   /* TWELVETH CAEDS DRAGGABLE ANIMATION START */
 
 
+// List version
+
 gsap.registerPlugin(Draggable);
 
 let rowSize   = 150;
@@ -397,7 +399,7 @@ for (let row = 0; row < totalRows; row++) {
 }
 
 let container = document.querySelector(".twelveth-cards__list");
-let listItems = gsap.utils.toArray(".list-itemtwelveth-card__item");
+let listItems = gsap.utils.toArray(".twelveth-card__item");
 let sortables = listItems.map(Sortable); // Array of sortables
 let total     = sortables.length;
 
@@ -466,6 +468,7 @@ function Sortable(element, index) {
   function setIndex(index) {
     
     let cell  = cells[index];
+    // var dirty = position.x !== cell.x || position.y !== cell.y;
     let dirty = getProp("x") !== cell.x || getProp("y") !== cell.y;
     
     sortable.cell = cell;
