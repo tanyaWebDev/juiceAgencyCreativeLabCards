@@ -387,6 +387,10 @@ const secondElementLength = listItems.length;
 
 const twelfthItemHeightResult = (containerHeight - listItemHeight * (secondElementLength / 3) - secondElementLength);
 
+console.log(twelfthItemHeightResult)
+console.log(twelfthItemWidthResult)
+
+
 let rowSize = twelfthItemHeightResult;
 let colSize = twelfthItemWidthResult;
 let totalRows = 3;
