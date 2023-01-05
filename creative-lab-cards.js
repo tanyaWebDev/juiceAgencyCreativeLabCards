@@ -371,7 +371,6 @@ document.getElementById("eighth-cards__list").onmousemove = e => {
 
   /* TWELVETH CAEDS DRAGGABLE ANIMATION START */
 
-console.clear();
 
 gsap.registerPlugin(Draggable);
 
@@ -467,7 +466,6 @@ function Sortable(element, index) {
   function setIndex(index) {
     
     let cell  = cells[index];
-    // var dirty = position.x !== cell.x || position.y !== cell.y;
     let dirty = getProp("x") !== cell.x || getProp("y") !== cell.y;
     
     sortable.cell = cell;
