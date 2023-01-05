@@ -392,8 +392,8 @@ console.log(twelfthItemHeightResult)
 console.log(twelfthItemWidthResult)
 
 
-let rowSize = twelfthItemHeightResult;
-let colSize = twelfthItemWidthResult;
+let rowSize = 150;
+let colSize = 250;
 let totalRows = 3;
 let totalCols = 3;
 
