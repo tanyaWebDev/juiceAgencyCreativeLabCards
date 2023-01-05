@@ -374,18 +374,19 @@ document.getElementById("eighth-cards__list").onmousemove = e => {
 gsap.registerPlugin(Draggable);
 
 let container = document.querySelector(".twelfth-cards__list");
+let containerItems = document.querySelector(".twelfth-card__item");
 let listItems = gsap.utils.toArray(".twelfth-card__item");
 
 const containerWidth = container.offsetWidth;
-const listItemWidth = listItems.offsetWidth;
+const containerItemsWidth = containerItems.offsetWidth;
 
-const twelfthItemWidthResult = (containerWidth - listItemWidth * 2 - 2);
+const twelfthItemWidthResult = (containerWidth - containerItemsWidth * 2 - 2);
 
 const containerHeight = container.offsetHeight;
-const listItemHeight = listItems.offsetHeight;
-const secondElementLength = listItems.length;
+const containerItemsHeight = containerItems.offsetHeight;
+const secondElementLength = containerItems.length;
 
-const twelfthItemHeightResult = (containerHeight - listItemHeight * (secondElementLength / 3) - secondElementLength);
+const twelfthItemHeightResult = (containerHeight - containerItemsHeight * (secondElementLength / 3) - secondElementLength);
 
 console.log(twelfthItemHeightResult)
 console.log(twelfthItemWidthResult)
