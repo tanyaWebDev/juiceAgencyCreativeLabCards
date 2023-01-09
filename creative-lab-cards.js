@@ -377,23 +377,8 @@ let container = document.querySelector(".twelfth-cards__list");
 let containerItems = document.querySelector(".twelfth-card__item");
 let listItems = gsap.utils.toArray(".twelfth-card__item");
 
-const containerWidth = container.offsetWidth;
-const containerItemsWidth = containerItems.offsetWidth;
-
-const twelfthItemWidthResult = (containerWidth - containerItemsWidth * 2 - 2);
-
-const containerHeight = container.offsetHeight;
-const containerItemsHeight = containerItems.offsetHeight;
-const secondElementLength = containerItems.length;
-
-const twelfthItemHeightResult = (containerHeight - containerItemsHeight * (secondElementLength / 3) - secondElementLength);
-
-console.log(twelfthItemHeightResult)
-console.log(twelfthItemWidthResult)
-
-
-let rowSize = 150;
-let colSize = 250;
+let rowSize = container.offsetHeight - containerItems.offsetHeight * (containerItems.length / 3) - containerItems.length;
+let colSize = container.offsetWidth - containerItems.offsetWidth * 2 - 2;
 let totalRows = 3;
 let totalCols = 3;
 
