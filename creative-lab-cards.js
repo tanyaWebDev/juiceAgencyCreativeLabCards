@@ -369,7 +369,7 @@ document.getElementById("eighth-cards__list").onmousemove = e => {
 }
 /* EIGHTH CARDS SCROLL ANIMATION END */
 
-/* TWELFTH CAEDS DRAGGABLE ANIMATION START */
+/* TWELFTH CAEDS DRAGGABLE ANIMATION START */ /*
 
 gsap.registerPlugin(Draggable);
 
@@ -522,7 +522,7 @@ function Sortable(element, index) {
 // Changes an elements's position in array
 function arrayMove(array, from, to) {
     array.splice(to, 0, array.splice(from, 1)[0]);
-}
+} 
 
-/* TWELFTH CAEDS DRAGGABLE ANIMATION END */
+/* TWELFTH CAEDS DRAGGABLE ANIMATION END */ */
 }
