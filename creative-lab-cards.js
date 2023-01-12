@@ -529,12 +529,11 @@ function init() {
 
     /* THIRTEENTH CARDS 3D ANIMATION START */
 
-    window.addEventListener("resize", applyLayout);
-    applyLayout();
+   /* var shouldRunAnimation = true;
+    var thirteenthCard, thirteenthCardContent, thirteenthCards, dragDistancePerRotation, thirteenthRadius, thirteenthDiv, thirteenthProgressWrap, thirteenthSpin, startProgress;
 
     function applyLayout() {
         if (screen.width >= 992) {
-            // Initialize animation and draggable functionality for the cards
             if (!thirteenthCards) {
                 shouldRunAnimation = true;
                 thirteenthCard = document.querySelector(".thirteenth-cards__list");
@@ -576,7 +575,6 @@ function init() {
             }
         } else {
             shouldRunAnimation = false;
-            // Remove animation and draggable functionality for the cards
             if (thirteenthCards) {
                 gsap.killTweensOf(thirteenthSpin);
                 thirteenthSpin.timeScale(0);
@@ -589,10 +587,13 @@ function init() {
         }
     }
 
+    window.addEventListener("resize", applyLayout);
+    applyLayout();
+
     function updateRotation() {
         let p = startProgress + (this.startX - this.x) / dragDistancePerRotation;
         thirteenthSpin.progress(thirteenthProgressWrap(p));
-    }
+    } */
 
     /* THIRTEENTH CARDS 3D ANIMATION END */
 
