@@ -530,19 +530,21 @@ function init() {
 
     /* THIRTEENTH CARDS 3D ANIMATION START */
 
-    function thiteenthAnimation() {
-        if (mediaQueryDesktop.matches) {
+    var thirteenthCard, thirteenthCardContent, thirteenthCards, dragDistancePerRotation, thirteenthRadius, thirteenthDiv, thirteenthProgressWrap, thirteenthSpin, startProgress;
 
-            var thirteenthCard = document.querySelector(".thirteenth-cards__list");
-            var thirteenthCardContent = document.querySelector(".three-d-card");
-            thirteenthCard.style.height = Math.ceil(thirteenthCardContent.offsetHeight / 3 * 2) + "px";
-            thirteenthCard.style.marginBottom = Math.ceil(thirteenthCardContent.offsetHeight / 3) + "px";
+    window.addEventListener("resize", function () {
+        if (screen.width >= 992) {
+            if (!thirteenthCards) {
+                thirteenthCard = document.querySelector(".thirteenth-cards__list");
+                thirteenthCardContent = document.querySelector(".three-d-card");
+                thirteenthCard.style.height = Math.ceil(thirteenthCardContent.offsetHeight / 3 * 2) + "px";
+                thirteenthCard.style.marginBottom = Math.ceil(thirteenthCardContent.offsetHeight / 3) + "px";
 
-            var thirteenthCards = gsap.utils.toArray(".three-d-card"),
-                dragDistancePerRotation = 3000,
-                thirteenthRadius = 520,
-                thirteenthDiv = document.createElement("div"),
-                thirteenthProgressWrap = gsap.utils.wrap(0, 1),
+                thirteenthCards = gsap.utils.toArray(".three-d-card");
+                dragDistancePerRotation = 3000;
+                thirteenthRadius = 520;
+                thirteenthDiv = document.createElement("div");
+                thirteenthProgressWrap = gsap.utils.wrap(0, 1);
                 thirteenthSpin = gsap.fromTo(thirteenthCards, {
                     rotationY: i => i * 360 / thirteenthCards.length
                 }, {
@@ -551,33 +553,40 @@ function init() {
                     ease: "none",
                     repeat: -1,
                     transformOrigin: "50% 50% " + -thirteenthRadius + "px"
-                }),
-                startProgress;
-
-            Draggable.create(thirteenthDiv, {
-                trigger: ".thirteenth-cards__list",
-                type: "x",
-                onPress() {
-                    gsap.killTweensOf(thirteenthSpin);
-                    thirteenthSpin.timeScale(0);
-                    startProgress = thirteenthSpin.progress();
-                },
-                onDrag: updateRotation,
-                onRelease() {
-                    gsap.to(thirteenthSpin, { timeScale: 1, duration: 1 });
-                }
-            });
-
-            function updateRotation() {
-                let p = startProgress + (this.startX - this.x) / dragDistancePerRotation;
-                thirteenthSpin.progress(thirteenthProgressWrap(p));
+                });
+                startProgress = 0;
+                Draggable.create(thirteenthDiv, {
+                    trigger: ".thirteenth-cards__list",
+                    type: "x",
+                    onPress() {
+                        gsap.killTweensOf(thirteenthSpin);
+                        thirteenthSpin.timeScale(0);
+                        startProgress = thirteenthSpin.progress();
+                    },
+                    onDrag: updateRotation,
+                    onRelease() {
+                        gsap.to(thirteenthSpin, {
+                            timeScale: 1,
+                            duration: 1
+                        });
+                    }
+                });
+            }
+        } else {
+            if (thirteenthCards) {
+                gsap.killTweensOf(thirteenthSpin);
+                thirteenthSpin = null;
+                thirteenthCards = null;
+                thirteenthDiv = null;
+                thirteenthProgressWrap = null;
             }
         }
-    }
+    });
 
-    $(window).resize(function () {
-        function thiteenthAnimation()
-    })
+    function updateRotation() {
+        let p = startProgress + (this.startX - this.x) / dragDistancePerRotation;
+        thirteenthSpin.progress(thirteenthProgressWrap(p));
+    }
 
     /* THIRTEENTH CARDS 3D ANIMATION END */
 
