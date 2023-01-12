@@ -577,6 +577,8 @@ function init() {
             shouldRunAnimation = false;
             if (thirteenthCards) {
                 gsap.killTweensOf(thirteenthSpin);
+                thirteenthSpin.timeScale(0);
+                startProgress = thirteenthSpin.progress();
                 thirteenthSpin = null;
                 thirteenthCards = null;
                 thirteenthDiv = null;
