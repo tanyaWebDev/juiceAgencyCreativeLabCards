@@ -533,7 +533,6 @@ function init() {
 
     function applyLayout() {
         if (screen.width >= 992) {
-            if (!thirteenthCards) {
                 thirteenthCard = document.querySelector(".thirteenth-cards__list");
                 thirteenthCardContent = document.querySelector(".three-d-card");
                 thirteenthCard.style.height = Math.ceil(thirteenthCardContent.offsetHeight / 3 * 2) + "px";
@@ -570,15 +569,12 @@ function init() {
                         });
                     }
                 });
-            }
         } else {
-            if (thirteenthCards) {
                 gsap.killTweensOf(thirteenthSpin);
                 thirteenthSpin = null;
                 thirteenthCards = null;
                 thirteenthDiv = null;
                 thirteenthProgressWrap = null;
-            }
         }
     }
 
