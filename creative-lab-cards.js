@@ -577,7 +577,7 @@ function init() {
 
     $(window).resize(function () {
         function thiteenthAnimation()
-    }
+    })
 
     /* THIRTEENTH CARDS 3D ANIMATION END */
 
