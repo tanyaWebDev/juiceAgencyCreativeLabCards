@@ -524,5 +524,50 @@ function arrayMove(array, from, to) {
     array.splice(to, 0, array.splice(from, 1)[0]);
 } */
 
-/* TWELFTH CAEDS DRAGGABLE ANIMATION END */ 
+/* TWELFTH CARDS DRAGGABLE ANIMATION END */ 
+
+/* THIRTEENTH CARDS 3D ANIMATION START */
+
+var thirteenthCard = document.querySelector(".thirteenth-cards__list");
+var thirteenthCardContent = document.querySelector(".three-d-card");
+thirteenthCard.style.height = Math.ceil(thirteenthCardContent.offsetHeight / 3 * 2) + "px";    
+thirteenthCard.style.marginBottom = Math.ceil(thirteenthCardContent.offsetHeight / 3) + "px";  
+
+var thirteenthCards = gsap.utils.toArray(".three-d-card"),
+    dragDistancePerRotation = 3000,
+    thirteenthRadius = 520,
+    thirteenthDiv = document.createElement("div"),
+    thirteenthProgressWrap = gsap.utils.wrap(0, 1),
+    thirteenthSpin = gsap.fromTo(thirteenthCards, {
+      rotationY: i => i * 360 / thirteenthCards.length
+    }, {
+      rotationY: "-=360",
+      duration: 40,
+      ease: "none",
+      repeat: -1,
+      transformOrigin: "50% 50% " + -thirteenthRadius + "px"
+    }),
+    startProgress;
+
+Draggable.create(thirteenthDiv, {
+  trigger: ".thirteenth-cards__list",
+  type: "x",
+  onPress() {
+    gsap.killTweensOf(thirteenthSpin);
+    thirteenthSpin.timeScale(0);
+    startProgress = thirteenthSpin.progress();
+  },
+  onDrag: updateRotation,
+  onRelease() {
+    gsap.to(thirteenthSpin, {timeScale: 1, duration: 1});
+  }
+});
+
+function updateRotation() {
+  let p = startProgress + (this.startX - this.x) / dragDistancePerRotation;
+  thirteenthSpin.progress(thirteenthProgressWrap(p));
+}
+
+/* THIRTEENTH CARDS 3D ANIMATION END */
+
 }
