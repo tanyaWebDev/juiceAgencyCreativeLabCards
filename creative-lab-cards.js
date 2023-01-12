@@ -531,7 +531,7 @@ function init() {
 
     var thirteenthCard, thirteenthCardContent, thirteenthCards, dragDistancePerRotation, thirteenthRadius, thirteenthDiv, thirteenthProgressWrap, thirteenthSpin, startProgress;
 
-    window.addEventListener("resize", function () {
+    function applyLayout() {
         if (screen.width >= 992) {
             if (!thirteenthCards) {
                 thirteenthCard = document.querySelector(".thirteenth-cards__list");
@@ -580,7 +580,10 @@ function init() {
                 thirteenthProgressWrap = null;
             }
         }
-    });
+    }
+
+    window.addEventListener("resize", applyLayout);
+    applyLayout();
 
     function updateRotation() {
         let p = startProgress + (this.startX - this.x) / dragDistancePerRotation;
