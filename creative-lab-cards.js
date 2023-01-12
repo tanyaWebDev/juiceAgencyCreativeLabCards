@@ -4,7 +4,6 @@ function init() {
     const mediaQueryDesktop = window.matchMedia('(min-width: 992px)');
     const mediaQueryTablet = window.matchMedia('(max-width: 991px)');
     const mediaQueryHorizontalMobile = window.matchMedia('(max-width: 767px)');
-    mm = gsap.matchMedia();
 
     /* FIRST CARDS MOBILE START */
 
