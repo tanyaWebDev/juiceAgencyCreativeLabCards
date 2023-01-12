@@ -569,30 +569,32 @@ function init() {
                     });
                 }
             });
-            thirteenthSpin.eventCallback("onUpdate", function () {
+            var intervalId = setInterval(function () {
                 if (screen.width < 992 && thirteenthSpin) {
                     thirteenthSpin.kill();
                     thirteenthCards = null;
                     thirteenthDiv = null;
                     thirteenthProgressWrap = null;
+                    clearInterval(intervalId);
                 }
-            });
-        } else {
-            gsap.killTweensOf(thirteenthSpin);
-            thirteenthSpin = null;
-            thirteenthCards = null;
-            thirteenthDiv = null;
-            thirteenthProgressWrap = null;
+            }, 100);
         }
+    } else {
+        gsap.killTweensOf(thirteenthSpin);
+        thirteenthSpin = null;
+        thirteenthCards = null;
+        thirteenthDiv = null;
+        thirteenthProgressWrap = null;
     }
+}
 
-    window.addEventListener("resize", applyLayout);
-    applyLayout();
+window.addEventListener("resize", applyLayout);
+applyLayout();
 
-    function updateRotation() {
-        let p = startProgress + (this.startX - this.x) / dragDistancePerRotation;
-        thirteenthSpin.progress(thirteenthProgressWrap(p));
-    }
+function updateRotation() {
+    let p = startProgress + (this.startX - this.x) / dragDistancePerRotation;
+    thirteenthSpin.progress(thirteenthProgressWrap(p));
+}
 
     /* THIRTEENTH CARDS 3D ANIMATION END */
 
