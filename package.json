@@ -19,5 +19,8 @@
   "homepage": "https://github.com/tanyaWebDev/juiceAgencyCreativeLabCards#readme",
   "dependencies": {
     "three": "^0.148.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.75.0"
   }
 }
