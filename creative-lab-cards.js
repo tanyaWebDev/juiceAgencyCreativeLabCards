@@ -1,3 +1,5 @@
+"export {}"
+
 import * as THREE from 'three';
 console.log(THREE)
 import { TWEEN } from 'three/addons/libs/tween.module.min.js';
