@@ -603,7 +603,7 @@ function init() {
     /* THIRTEENTH CARDS 3D ANIMATION END */
 
     import * as THREE from 'three';
-    
+
     const table = document.querySelectorAll(".fourteenth-card__item");
 
 
