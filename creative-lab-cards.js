@@ -603,12 +603,6 @@ function init() {
     /* THIRTEENTH CARDS 3D ANIMATION END */
 
 
-    import * as THREE from 'three';
-
-    import { TWEEN } from 'three/addons/libs/tween.module.min.js';
-    import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
-    import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
-
     const table = document.querySelectorAll(".fourteenth-card__item");
 
 
@@ -828,5 +822,6 @@ function init() {
         renderer.render(scene, camera);
 
     }
+
 
 }
