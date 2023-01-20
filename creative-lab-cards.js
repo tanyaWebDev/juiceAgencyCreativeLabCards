@@ -1,7 +1,4 @@
-"export {}"
-
 import * as THREE from 'three';
-console.log(THREE)
 import { TWEEN } from 'three/addons/libs/tween.module.min.js';
 import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
 import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
