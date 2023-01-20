@@ -1,0 +1,26 @@
+{
+  "name": "juice-code",
+  "version": "1.0.0",
+  "description": "",
+  "main": "creative-lab-cards.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanyaWebDev/juiceAgencyCreativeLabCards.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanyaWebDev/juiceAgencyCreativeLabCards/issues"
+  },
+  "homepage": "https://github.com/tanyaWebDev/juiceAgencyCreativeLabCards#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  },
+  "dependencies": {
+    "three": "^0.148.0"
+  }
+}
