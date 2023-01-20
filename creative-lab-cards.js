@@ -602,10 +602,7 @@ function init() {
 
     /* THIRTEENTH CARDS 3D ANIMATION END */
 
-    import * as THREE from 'three';
-    import { TWEEN } from 'three/addons/libs/tween.module.min.js';
-    import { TrackballControls } from 'three/addons/controls/TrackballControls.js';
-    import { CSS3DRenderer, CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
+    /* FOURTEENTH CARDS ANIMATION START */
 
     const table = document.querySelectorAll(".fourteenth-card__item");
 
@@ -614,7 +611,7 @@ function init() {
     let controls;
 
     const objects = [];
-    const targets = { table: [], sphere: [], helix: [], grid: [] };
+    const targets = { table: [], grid: [] };
 
     init();
     animate();
@@ -667,47 +664,6 @@ function init() {
 
         }
 
-        // sphere
-
-        const vector = new THREE.Vector3();
-
-        for (let i = 0, l = objects.length; i < l; i++) {
-
-            const phi = Math.acos(- 1 + (2 * i) / l);
-            const theta = Math.sqrt(l * Math.PI) * phi;
-
-            const object = new THREE.Object3D();
-
-            object.position.setFromSphericalCoords(800, phi, theta);
-
-            vector.copy(object.position).multiplyScalar(2);
-
-            object.lookAt(vector);
-
-            targets.sphere.push(object);
-
-        }
-
-        // helix
-
-        for (let i = 0, l = objects.length; i < l; i++) {
-
-            const theta = i * 0.175 + Math.PI;
-            const y = - (i * 8) + 450;
-
-            const object = new THREE.Object3D();
-
-            object.position.setFromCylindricalCoords(900, theta, y);
-
-            vector.x = object.position.x * 2;
-            vector.y = object.position.y;
-            vector.z = object.position.z * 2;
-
-            object.lookAt(vector);
-
-            targets.helix.push(object);
-
-        }
 
         // grid
 
@@ -740,20 +696,6 @@ function init() {
         buttonTable.addEventListener('click', function () {
 
             transform(targets.table, 2000);
-
-        });
-
-        const buttonSphere = document.getElementById('sphere');
-        buttonSphere.addEventListener('click', function () {
-
-            transform(targets.sphere, 2000);
-
-        });
-
-        const buttonHelix = document.getElementById('helix');
-        buttonHelix.addEventListener('click', function () {
-
-            transform(targets.helix, 2000);
 
         });
 
@@ -826,6 +768,7 @@ function init() {
         renderer.render(scene, camera);
 
     }
-
+    
+    /* FOURTEENTH CARDS ANIMATION END */
 
 }
